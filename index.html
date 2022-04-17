@@ -109,13 +109,13 @@
                 <p><img src="./assets/images/img-01.jpg" class="img-responsive" alt=""></p> 
               </div>-->
               <div class="col-md-8">
-
+              <p>GitHub Link: <a href="https://github.com/Bsinglet3/SSW590">https://github.com/Bsinglet3/SSW590</a></p>
               <p>
-              Our project starts with Github, where we choose to host our code. The benefits of using source control are well known. Our repo 
+              Our project starts with GitHub, where we choose to host our code. The benefits of using source control are well known. Our repo 
               provides us with a single location to host our code.  It makes it easier to add features and manage sucsessive versions. As 
-              mentioned, we were both familar with Git but this project afforded us the opportunity to grow our skills with it as we both made 
-              extensive us of Git Bash commands. Besides it personal benefits, Github is also what gives our pipeline a clear trigger: whenever
-              a commit is made to the repo.
+              mentioned, we were both familar with Git but this project afforded us the opportunity to grow our skills with it. We both made 
+              extensive us of Git Bash commands, Ben choose todo so in the terminal while Omar utilized Visual Studio Code's Git integration. 
+              Besides it personal benefits, GitHub is also what gives our pipeline a clear trigger: whenever a commit is made to the repo.
               </p>
 
               </div>
@@ -148,7 +148,77 @@
         </div>
 
 
+        <div class="card">
+          <div class="card-block">
+            <h2>Jenkins</h2>
+            <div class="row">
+              <!--<div class="col-md-4">
+                <p><img src="./assets/images/img-01.jpg" class="img-responsive" alt=""></p> 
+              </div>-->
+              <div class="col-md-8">
+
+              <p>
+              The backbone of our project is Jenkins. Hosted on our DigitalOcean server, it is what allows us to automate large portions of
+              the deployment process. Instead of running our pipeline on the built-in node, we created a child. We encoutered several issues
+              with the build-in node which used it's own jenkins user. This node logs in as normal user with sudo permissions, resolving our 
+              issues. As mentioned, Jenkins is triggered by commits to our Githuh repo. Specifically, Jenkins is listening for a push Webhook
+              from Github. When triggered, Jenkins will pull the latest version of the repo into the server. Jenkins can then execute shell
+              commands; however, documentation advises that Jenkins calls a shell script instead of running many commands itself. Which followed
+              this advice. After the script is complete, Jenkins will check the outcome of the build and if it fails, it will email us. 
+              </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="card-block">
+            <h2>Bash</h2>
+            <div class="row">
+              <!--<div class="col-md-4">
+                <p><img src="./assets/images/img-01.jpg" class="img-responsive" alt=""></p> 
+              </div>-->
+              <div class="col-md-8">
+
+              <p>
+              During the configuration of our DigitalOcean server, we extensively used Bash commands. The installation of any sofware, such as 
+              Jenkins and Docker in the command line as the server is headless. During this installation, we became familiar with the server's 
+              file system and how to move through it. Once installation was complete, the use of a Bash script was required to create and deploy
+              the Docker container. A relatively simple bash script is trigger by jenkins that stops and removes and existing docker containers. 
+              The script then places the most recent version of the project files into the correct directory. It will then create and start an NGINX 
+              container using this directory. Lastly, it checks to make sure that this single, up-to-date container is the only running container and 
+              if not, it returns an error, otherwise the script exits normally.
+              </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
         
+
+        <div class="card">
+          <div class="card-block">
+            <h2>Docker</h2>
+            <div class="row">
+              <!--<div class="col-md-4">
+                <p><img src="./assets/images/img-01.jpg" class="img-responsive" alt=""></p> 
+              </div>-->
+              <div class="col-md-8">
+
+              <p>
+              The website itself is hosted on an NGINX container created by the bash script. The container is set up so that it is persistant and 
+              will remain up until manually stopped. The container also exposes port 80 so that the website can be accessed through HTTP. 
+              The benefit of hosting NGINX in a container instead of directly on our machine is that is allows us to quickly deploy the latest build 
+              of our website. With 3 commands, we can remove the existing container and start the new one. In addition, the utilization of docker
+              containers in this project allowed us to become more familar with how they work and to set them up. 
+              </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="card">
           <div class="card-block">
@@ -233,25 +303,25 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item active">
-                <img src="./assets/images/img-05.jpg" class="img-responsive" alt="...">
+                <img src="./assets/images/Jenkins.jpg" class="img-responsive" alt="...">
                 <div class="carousel-caption">
-                  <h3 class="h5">Jules for Bastion</h3>
-                  <p>2017</p>
+                  <h3 class="h5">Jenkins</h3>
+                  <p>Images of what we worked on in the project</p>
                 </div>
               </div>
               <div class="item">
-                <img src="./assets/images/img-06.jpg" class="img-responsive" alt="...">
+                <img src="./assets/images/GitHub.jpg" class="img-responsive" alt="...">
                 <div class="carousel-caption">
-                  <h3 class="h5">Jules for Bastion</h3>
-                  <p>2017</p>
+                  <h3 class="h5">GitHub</h3>
+                  <p>Images of what we worked on in the project</p>
                 </div>
               </div>
 
               <div class="item">
-                <img src="./assets/images/img-08.jpg" class="img-responsive" alt="...">
+                <img src="./assets/images/DigitalOcean.jpg" class="img-responsive" alt="...">
                 <div class="carousel-caption">
-                  <h3 class="h5">Jules for Bastion</h3>
-                  <p>2017</p>
+                  <h3 class="h5">Digital Ocean</h3>
+                  <p>Images of what we worked on in the project</p>
                 </div>
               </div>
             </div>
@@ -285,24 +355,22 @@
         </div>
 
         <div class="card">
-          <div class="card-block">
-            <h2>Contact</h2>
-            <form action="" class="reveal-content">
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Email">
+            <div class="card-block">
+              <h2>About Us</h2>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="./assets/images/omar.jpg" class="img-responsive" alt="">
+                  <h3 class="h5">Omar Abdelmotaleb</h3>
+                  <p>Computer Science Major</p>
+                </div>
+                <div class="col-md-6">
+                  <img src="./assets/images/ben.jpg" class="img-responsive" alt="">
+                  <h3 class="h5">Benjamin Singleton</h3>
+                  <p>Computer Science Major</p>
+                </div>
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="subject" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" rows="5" placeholder="Enter your message"></textarea>
-              </div>
-              <div class="form-group">
-                <button type="submit" class=" btn btn-primary">Send message</button>
-              </div> 
-            </form>
+            </div>
           </div>
-        </div>
        
      </div>
    </div>
