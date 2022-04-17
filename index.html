@@ -60,6 +60,14 @@
    <div class="row">
      <div class="col-xs-12">
 
+        <div class="card">
+            <div class="card-block">
+              <h2>Visualization of our CI/CD Pipeline</h2>
+              <div class="row">
+                <img src="./assets/images/Pipeline.jpg" class="img-responsive" alt="">
+              </div>
+            </div>
+          </div>
 
         <div class="card">
           <div class="card-block">
@@ -70,8 +78,22 @@
               </div>-->
               <div class="col-md-8">
 
-              <p>We created this website to report and track our progress with the DevOps project. </p>
-              <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>We created this website to report and track our progress on a DevOps project for SSW-590, with Professor Gregg Vesonder. 
+              We choose to create a simple CI/CD pipeline to deploy a static website. The project ties to together several technologies to 
+              accomplish this. The code is hosted on a GitHub repo. When code is pushed to the repo, an instance of Jenkins running on a 
+              DigitalOcean server pulls the latest commit. Jenkins will then trigger a bash script that will create and start a NGINX 
+              container for the latest commit. 
+              </p>
+              <p> 
+              The website itself is simple, using HTML and CSS; however, the website is not the focus of the project. We choose to build a static
+              site because we were familar we how to do so. This allowed us to focus on what was important, learning and configuring the various
+              technologies involved. While we were familar is some tools such as Git or bash, others such as Jenkins and Docker were new too us. 
+              This projet allowed us to become familar with all of them. The result is a CI/CD pipeline that combines these various technologies 
+              into one process. 
+              </p>
+              <p>
+              The following sections describe how we used each technology in more detail as well as our experience while working on the project.
+              </p>
 
               </div>
             </div>
@@ -81,26 +103,52 @@
 
         <div class="card">
           <div class="card-block">
-            <h2>Projects</h2>
+            <h2>GitHub</h2>
             <div class="row">
-              <div class="col-md-4">
-                <img src="./assets/images/img-02.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Amelia App</h3>
-                <p>June 2017</p>
-              </div>
-              <div class="col-md-4">
-                <img src="./assets/images/img-03.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Portland</h3>
-                <p>March 2017</p>
-              </div>
-              <div class="col-md-4">
-                <img src="./assets/images/img-04.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Denz for Nilon</h3>
-                <p>Jan 2017</p>
+              <!--<div class="col-md-4">
+                <p><img src="./assets/images/img-01.jpg" class="img-responsive" alt=""></p> 
+              </div>-->
+              <div class="col-md-8">
+
+              <p>
+              Our project starts with Github, where we choose to host our code. The benefits of using source control are well known. Our repo 
+              provides us with a single location to host our code.  It makes it easier to add features and manage sucsessive versions. As 
+              mentioned, we were both familar with Git but this project afforded us the opportunity to grow our skills with it as we both made 
+              extensive us of Git Bash commands. Besides it personal benefits, Github is also what gives our pipeline a clear trigger: whenever
+              a commit is made to the repo.
+              </p>
+
               </div>
             </div>
           </div>
         </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h2>DigitalOcean</h2>
+            <div class="row">
+              <!--<div class="col-md-4">
+                <p><img src="./assets/images/img-01.jpg" class="img-responsive" alt=""></p> 
+              </div>-->
+              <div class="col-md-8">
+
+              <p>
+              To host our projet, we choose to use a virtual machine on the DigitalOcean platform. Unlike Azure or AWS which typically charge 
+              per amount of computation, DigitalOcean has flat rates. We initially purchased a server with 1 vCPU, 1 GB of RAM, and a 25 GB SSD
+              for $5 a month. In the instance that we overloaded our server, it would simply crash instead of scalling out and charging us more.
+              This was very benefical for a pair of broke college students. Besides flat rates, DigitalOcean also preforms automatic backups and 
+              allows us to monitor various server metrics such as CPU and Disk usage. These later features were useful when after getting Jenkins
+              and Docker installed on our server, we did observe some instability. Thus chose to increase our server RAM to 2 GB, resolving the 
+              issues.
+              </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
 
         <div class="card">
           <div class="card-block">
