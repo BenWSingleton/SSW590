@@ -1,3 +1,35 @@
-body {
-	background-color: lightblue;
+* {
+	box-sizing: border-box;
+	color: rgb(255, 255, 255);
+}
+
+html {
+	background-color: lightskyblue;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.nav ul {
+	margin: 0;
+}
+
+.nav li {
+	display: inline;
+}
+
+.nav a {
+	padding: .1em;
+	color: lightgray;
+}
+
+.main-header {
+	background-color: black;
+	padding-bottom: 15px;
+}
+
+.main-footer {
+	background-color: black;
 }
