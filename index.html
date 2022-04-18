@@ -138,7 +138,7 @@
               for $5 a month. In the instance that we overloaded our server, it would simply crash instead of scalling out and charging us more.
               This was very benefical for a pair of broke college students. Besides flat rates, DigitalOcean also preforms automatic backups and 
               allows us to monitor various server metrics such as CPU and Disk usage. These later features were useful when after getting Jenkins
-              and Docker installed on our server, we did observe some instability. Thus chose to increase our server RAM to 2 GB, resolving the 
+              and Docker installed on our server, we did observe some instability. As such, we chose to increase our server RAM to 2 GB, resolving the 
               issues.
               </p>
 
@@ -159,12 +159,12 @@
 
               <p>
               The backbone of our project is Jenkins. Hosted on our DigitalOcean server, it is what allows us to automate large portions of
-              the deployment process. Instead of running our pipeline on the built-in node, we created a child. We encoutered several issues
-              with the build-in node which used it's own jenkins user. This node logs in as normal user with sudo permissions, resolving our 
+              the deployment process. Instead of running our pipeline on the built-in node, we created a child node. We encoutered several issues
+              with the built-in node which used it's own jenkins user. The child node logs in as a normal user with sudo permissions, resolving our 
               issues. As mentioned, Jenkins is triggered by commits to our Githuh repo. Specifically, Jenkins is listening for a push Webhook
               from Github. When triggered, Jenkins will pull the latest version of the repo into the server. Jenkins can then execute shell
-              commands; however, documentation advises that Jenkins calls a shell script instead of running many commands itself. Which followed
-              this advice. After the script is complete, Jenkins will check the outcome of the build and if it fails, it will email us. 
+              commands; however, documentation advises that Jenkins calls a shell script instead of running many commands itself. We followed
+              this advice. After the script is complete, Jenkins will check the outcome of the build and if it fails, it will notify us through email. 
               </p>
 
               </div>
@@ -210,7 +210,7 @@
               <p>
               The website itself is hosted on an NGINX container created by the bash script. The container is set up so that it is persistant and 
               will remain up until manually stopped. The container also exposes port 80 so that the website can be accessed through HTTP. 
-              The benefit of hosting NGINX in a container instead of directly on our machine is that is allows us to quickly deploy the latest build 
+              The benefit of hosting NGINX in a container instead of directly on our machine is that it allows us to quickly deploy the latest build 
               of our website. With 3 commands, we can remove the existing container and start the new one. In addition, the utilization of docker
               containers in this project allowed us to become more familar with how they work and to set them up. 
               </p>
