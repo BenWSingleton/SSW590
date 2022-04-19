@@ -27,7 +27,7 @@
 <main class="content-wrapper">
   <header class="white-text-container section-container">
     <div class="text-center">
-      <h1>Omar Abdelmotaleb</h1>
+      <h1>Omar Abdelmotaleb - This is a new change</h1>
       <h1>Benjamin Singleton</h1>
       <p>A project we made for SSW-590 DevOps Principles and Practices</p>
     </div>
@@ -66,7 +66,7 @@
               The website itself is simple, using HTML and CSS; however, the website is not the focus of the project. We choose to build a static
               site because we were familar we how to do so. This allowed us to focus on what was important, learning and configuring the various
               technologies involved. While we were familar is some tools such as Git or bash, others such as Jenkins and Docker were new too us. 
-              This projet allowed us to become familar with all of them. The result is a CI/CD pipeline that combines these various technologies 
+              This project allowed us to become familar with all of them. The result is a CI/CD pipeline that combines these various technologies 
               into one process. 
               </p>
               <p>
@@ -136,7 +136,7 @@
               The backbone of our project is Jenkins. Hosted on our DigitalOcean server, it is what allows us to automate large portions of
               the deployment process. Instead of running our pipeline on the built-in node, we created a child node. We encoutered several issues
               with the built-in node which used it's own jenkins user. The child node logs in as a normal user with sudo permissions, resolving our 
-              issues. As mentioned, Jenkins is triggered by commits to our Githuh repo. Specifically, Jenkins is listening for a push Webhook
+              issues. As mentioned, Jenkins is triggered by commits to our GitHub repo. Specifically, Jenkins is listening for a push Webhook
               from Github. When triggered, Jenkins will pull the latest version of the repo into the server. Jenkins can then execute shell
               commands; however, documentation advises that Jenkins calls a shell script instead of running many commands itself. We followed
               this advice. After the script is complete, Jenkins will check the outcome of the build and if it fails, it will notify us through email. 
@@ -158,7 +158,7 @@
               During the configuration of our DigitalOcean server, we extensively used Bash commands. The installation of any sofware, such as 
               Jenkins and Docker requires the use of command line as the server is headless. During this installation, we became familiar with the server's 
               file system and how to move through it. Once installation was complete, the use of a Bash script was used to create and deploy
-              the Docker container. A relatively simple bash script is trigger by jenkins. The script stops the currently 
+              the Docker container. A relatively simple bash script is trigger by Jenkins. The script stops the currently 
               running container and store's its ID.
               The script will move the new files into the correct location before it creates and deploys the new container.
               After a short delay, it tests to see if the website has been sucessfully deployeed. 
