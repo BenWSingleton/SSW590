@@ -190,12 +190,16 @@
 
               <p>
               During the configuration of our DigitalOcean server, we extensively used Bash commands. The installation of any sofware, such as 
-              Jenkins and Docker in the command line as the server is headless. During this installation, we became familiar with the server's 
-              file system and how to move through it. Once installation was complete, the use of a Bash script was required to create and deploy
-              the Docker container. A relatively simple bash script is trigger by jenkins that stops and removes and existing docker containers. 
-              The script then places the most recent version of the project files into the correct directory. It will then create and start an NGINX 
-              container using this directory. Lastly, it checks to make sure that this single, up-to-date container is the only running container and 
-              if not, it returns an error, otherwise the script exits normally.
+              Jenkins and Docker requires the use of command line as the server is headless. During this installation, we became familiar with the server's 
+              file system and how to move through it. Once installation was complete, the use of a Bash script was used to create and deploy
+              the Docker container. A relatively simple bash script is trigger by jenkins. The script stops the currently 
+              running container and store's its ID.
+              The script will move the new files into the correct location before it creates and deploys the new container.
+              After a short delay, it tests to see if the website has been sucessfully deployeed. 
+              If the deployment has been successful, the previous version's container is removed and the script ends. If it
+              is unsuccessful, the new versions is
+              removed and the previous version is restored with the scripting returning an error, causing Jenkins to send out
+              email notifications.
               </p>
 
               </div>
